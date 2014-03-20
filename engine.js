@@ -90,26 +90,3 @@ Engine.prototype.b = function(name, base) {
     this.bases[name] = base;
     return this.bases[name];
 };
-
-/*\
-|*| ============================================================================
-|*| Extra math functions for coordinate geometry
-|*| ============================================================================
-\*/
-Engine.prototype.Math = {
-    /*\ 
-    |*| Finds x'
-    |*| x and y are coords being rotated, px and py are coords being rotated
-    |*| around, and q is rotation
-    \*/
-    xr: function(x, y, px, py, q) {
-        return px + (x-px)*Math.cos(q)-(y-py)*Math.sin(q);
-    },
-    /*\
-    |*| Finds y'
-    |*| parameters are the same as xr()
-    \*/
-    yr: function(x, y, px, py, q) {
-        return py + (x-px)*Math.sin(q)+(y-py)*Math.cos(q);
-    }
-};
